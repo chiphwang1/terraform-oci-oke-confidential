@@ -124,7 +124,8 @@ variable "node_image_id" {
 
 variable "ssh_public_key" {
   type        = string
-  description = "SSH public key for worker node access."
+  description = "SSH public key for worker node access. Optional — omit to disable SSH."
+  default     = ""
 }
 
 variable "max_pods_per_node" {

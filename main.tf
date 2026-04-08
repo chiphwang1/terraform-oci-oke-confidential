@@ -71,12 +71,12 @@ resource "oci_core_instance" "confidential_worker" {
 
   metadata = merge(
     {
-      ssh_authorized_keys = var.ssh_public_key
       user_data = base64encode(templatefile("${path.module}/cloud-init.tftpl", {
         cluster_endpoint = split(":", data.oci_containerengine_cluster.oke.endpoints[0].private_endpoint)[0]
         cluster_ca_cert  = var.cluster_ca_cert
       }))
     },
+    var.ssh_public_key != "" ? { ssh_authorized_keys = var.ssh_public_key } : {},
     # VCN-Native Pod Networking metadata
     var.cni_type == "npn" ? {
       oke-native-pod-networking = "true"
