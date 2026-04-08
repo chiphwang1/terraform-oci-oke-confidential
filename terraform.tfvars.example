@@ -1,0 +1,55 @@
+# =============================================================================
+# Identity / Authentication
+# =============================================================================
+
+tenancy_ocid     = "ocid1.tenancy.oc1..aaaaaaaaXXXXXXXX"
+compartment_ocid = "ocid1.compartment.oc1..aaaaaaaaXXXXXXXX"
+user_ocid        = "ocid1.user.oc1..aaaaaaaaXXXXXXXX"
+fingerprint      = "aa:bb:cc:dd:ee:ff:00:11:22:33:44:55:66:77:88:99"
+private_key_path = "~/.oci/oci_api_key.pem"
+region           = "us-ashburn-1"
+
+# =============================================================================
+# Existing Cluster
+# =============================================================================
+
+cluster_id      = "ocid1.cluster.oc1.iad.aaaaaaaaXXXXXXXX"
+cluster_ca_cert = "LS0tLS1CRUdJTi..."  # base64-encoded CA cert from kubeconfig
+cluster_name    = "my-cluster"
+kubernetes_version = "v1.34.1"
+
+# CNI plugin: "npn" (VCN-Native Pod Networking) or "flannel"
+cni_type = "npn"
+
+# =============================================================================
+# Existing Network
+# =============================================================================
+
+worker_subnet_id = "ocid1.subnet.oc1.iad.aaaaaaaaXXXXXXXX"
+pod_subnet_id    = "ocid1.subnet.oc1.iad.aaaaaaaaXXXXXXXX"  # required for npn
+
+# =============================================================================
+# Self-Managed Worker Nodes
+# =============================================================================
+
+node_count          = 2
+node_shape          = "VM.Standard.E4.Flex"
+node_ocpus          = 4
+node_memory_gb      = 64
+node_boot_volume_gb = 100
+max_pods_per_node   = 31
+
+# OKE-optimized image (find via: oci ce node-pool-options get --node-pool-option-id all)
+node_image_id = "ocid1.image.oc1.iad.aaaaaaaaXXXXXXXX"
+
+# SSH key (optional — omit or leave empty to disable SSH access)
+# ssh_public_key = "ssh-ed25519 AAAA..."
+
+# =============================================================================
+# Confidential Computing (AMD SEV)
+# =============================================================================
+
+enable_confidential_compute        = true
+is_secure_boot_enabled             = false
+is_measured_boot_enabled           = false
+is_trusted_platform_module_enabled = false
