@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Self-managed OKE node bootstrap
+# Joins this instance to the OKE cluster using oke-install.sh
+
+set -euo pipefail
+
+bash /etc/oke/oke-install.sh \
+  --apiserver-endpoint "${cluster_endpoint}" \
+  --kubelet-ca-cert "${cluster_ca_cert}"
