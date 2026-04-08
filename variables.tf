@@ -12,21 +12,6 @@ variable "compartment_ocid" {
   description = "OCID of the compartment where resources will be created."
 }
 
-variable "user_ocid" {
-  type        = string
-  description = "OCID of the user calling the OCI API."
-}
-
-variable "fingerprint" {
-  type        = string
-  description = "Fingerprint of the API signing key."
-}
-
-variable "private_key_path" {
-  type        = string
-  description = "Path to the private key file used for API authentication."
-}
-
 variable "region" {
   type        = string
   description = "OCI region (e.g. us-ashburn-1)."

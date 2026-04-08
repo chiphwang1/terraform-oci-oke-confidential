@@ -59,9 +59,6 @@ kubectl get nodes
 |---|---|
 | `tenancy_ocid` | OCID of the OCI tenancy |
 | `compartment_ocid` | OCID of the compartment |
-| `user_ocid` | OCID of the API user |
-| `fingerprint` | API signing key fingerprint |
-| `private_key_path` | Path to the API private key |
 | `region` | OCI region (e.g. `us-ashburn-1`) |
 | `cluster_id` | OCID of the existing OKE cluster |
 | `cluster_ca_cert` | Base64-encoded cluster CA certificate |
