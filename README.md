@@ -68,7 +68,6 @@ kubectl get nodes
 | `worker_subnet_id` | OCID of the subnet for worker nodes |
 | `pod_subnet_id` | OCID of the subnet for pod IPs (VCN-Native CNI) |
 | `node_image_id` | OCID of the OKE-optimized node image |
-| `ssh_public_key` | SSH public key for node access |
 
 ### Optional
 
@@ -82,6 +81,7 @@ kubectl get nodes
 | `node_ocpus` | `4` | OCPUs per node |
 | `node_memory_gb` | `64` | Memory (GB) per node |
 | `node_boot_volume_gb` | `100` | Boot volume size (GB) |
+| `ssh_public_key` | `""` | SSH public key for node access (omit to disable SSH) |
 | `max_pods_per_node` | `31` | Max pods per node (VCN-Native CNI) |
 | `enable_confidential_compute` | `true` | Enable AMD SEV memory encryption |
 | `is_secure_boot_enabled` | `true` | Enable UEFI Secure Boot |
